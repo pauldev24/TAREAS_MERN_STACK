@@ -8,16 +8,19 @@ import taskRoutes from "./routes/tasks.routes.js";
 
 const app = express();
 //Me permite extraer los archivos
-const _dirname = dirname(fileURLToPath(import.meta.url));
+//const _dirname = dirname(fileURLToPath(import.meta.url));
 //Nos permite decir que servidores se pueden conectar
-app.use(cors({}));
-//
+app.use(
+  cors({
+    origin: "http://localhost:5173",
+  })
+);
 app.use(express.json());
 app.use(taskRoutes);
 app.use(indexRoutes);
 
 //Para llamar la vista cliente
-app.use(express.static(join(_dirname, "../client/dist")));
+//app.use(express.static(join(_dirname, "../client/dist")));
 
 //Pregunta si hay una variable de entorno sino usa el local
 app.listen(PORT);
