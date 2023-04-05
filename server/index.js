@@ -10,11 +10,8 @@ const app = express();
 //Me permite extraer los archivos
 const _dirname = dirname(fileURLToPath(import.meta.url));
 //Nos permite decir que servidores se pueden conectar
-app.use(
-  cors({
-    origin: "http://localhost:5173",
-  })
-);
+app.use(cors({}));
+//
 app.use(express.json());
 app.use(taskRoutes);
 app.use(indexRoutes);
