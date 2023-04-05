@@ -12,7 +12,7 @@ const app = express();
 //Nos permite decir que servidores se pueden conectar
 app.use(
   cors({
-    origin: ["http://localhost:5173","https://cafeteria-pyc.000webhostapp.com/"],
+    origin: ["http://localhost:5173","https://cafeteria-pyc.000webhostapp.com/dist/"],
   })
 );
 app.use(express.json());
