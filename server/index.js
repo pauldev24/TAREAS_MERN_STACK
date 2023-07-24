@@ -5,10 +5,11 @@ import { dirname, join } from "path";
 import { fileURLToPath } from "url";
 import indexRoutes from "./routes/index.routes.js";
 import taskRoutes from "./routes/tasks.routes.js";
+import { log } from "console";
 
 const app = express();
 //Me permite extraer los archivos
-//const _dirname = dirname(fileURLToPath(import.meta.url));
+const _dirname = dirname(fileURLToPath(import.meta.url));
 //Nos permite decir que servidores se pueden conectar
 app.use(
   cors({
@@ -20,7 +21,8 @@ app.use(taskRoutes);
 app.use(indexRoutes);
 
 //Para llamar la vista cliente
-//app.use(express.static(join(_dirname, "../client/dist")));
+app.use(express.static(join(_dirname, "../client/dist")));
+console.log(_dirname);
 
 //Pregunta si hay una variable de entorno sino usa el local
 app.listen(PORT);
