@@ -5,7 +5,6 @@ import { dirname, join } from "path";
 import { fileURLToPath } from "url";
 import indexRoutes from "./routes/index.routes.js";
 import taskRoutes from "./routes/tasks.routes.js";
-import { log } from "console";
 
 const app = express();
 //Me permite extraer los archivos
